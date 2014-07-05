@@ -2,55 +2,58 @@ package ArrayOP;
 
 public class QuickSort {
 	public static void main(String[] args) {
-		int[] arr={4,5,1,6,7,3,9,0};
-		if(arr.length==1)
-			System.out.println(arr[0]);
-		else
+		int[] arr={2,3,1,5,-1,6,4};
+		if(arr.length==0)
 		{
+			System.out.println("ÇëÊäÈëÊı×é");
+			return;
+		}
 		QuickSort(arr,0,arr.length-1);
 		for(int i=0;i<arr.length;i++)
 			System.out.print(arr[i]+" ");
-		}
 	}
 	
 	public static void QuickSort(int [] arr,int begin,int end)
 	{
+		if(begin==end)
+			return;
+		int index=Sort(arr,begin,end);
+		if(begin!=index)
+			QuickSort(arr,begin,index-1);
+		if(index+1<end)
+			QuickSort(arr,index+1,end);
+	}
+	
+	public static int Sort(int [] arr,int begin,int end)
+	{
 		int temp;
-		int i=begin;
-		int j=end;
 		int key=arr[begin];
-		while(i!=j)
+		while(begin!=end)
 		{
-			if(key==arr[i])
+			if(key==arr[begin])
 			{
-			if(arr[j]<key)
+			if(arr[end]<key)
 			{
-				temp=arr[i];
-				arr[i]=arr[j];
-				arr[j]=temp;
+				temp=arr[begin];
+				arr[begin]=arr[end];
+				arr[end]=temp;
 			}	
 			else
-				j--;
+				end--;
 			}
 			else
 			{
-				if(arr[i]>key)
+				if(arr[begin]>key)
 				{
-					temp=arr[i];
-					arr[i]=arr[j];
-					arr[j]=temp;
+					temp=arr[begin];
+					arr[begin]=arr[end];
+					arr[end]=temp;
 				}	
 				else
-					i++;
+					begin++;
 			}
 		}
-		for(int k=0;k<arr.length;k++)
-			System.out.print(arr[k]+" ");
-			System.out.println();
-		if(begin!=i)
-			QuickSort(arr,begin,i);
-		if(i+1<end)
-			QuickSort(arr,i+1,end);
+		return begin;
 		}
 	}
 
