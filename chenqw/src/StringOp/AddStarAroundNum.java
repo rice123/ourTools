@@ -7,6 +7,7 @@ public class AddStarAroundNum {
 		// TODO Auto-generated method stub
 		Scanner s=new Scanner(System.in);
         StringBuilder sb=new StringBuilder(s.nextLine());
+        s.close();
       if(sb.length()==0)
         {
         	System.out.print("ÇëÊäÈë×Ö·û´®");

@@ -8,20 +8,20 @@ public class QuickSort {
 			System.out.println("ÇëÊäÈëÊı×é");
 			return;
 		}
-		QuickSort(arr,0,arr.length-1);
+		quickSort(arr,0,arr.length-1);
 		for(int i=0;i<arr.length;i++)
 			System.out.print(arr[i]+" ");
 	}
 	
-	public static void QuickSort(int [] arr,int begin,int end)
+	public static void quickSort(int [] arr,int begin,int end)
 	{
 		if(begin==end)
 			return;
 		int index=Sort(arr,begin,end);
 		if(begin!=index)
-			QuickSort(arr,begin,index-1);
+			quickSort(arr,begin,index-1);
 		if(index+1<end)
-			QuickSort(arr,index+1,end);
+			quickSort(arr,index+1,end);
 	}
 	
 	public static int Sort(int [] arr,int begin,int end)

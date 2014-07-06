@@ -8,6 +8,7 @@ public class CountOneInBinary {
 		// TODO Auto-generated method stub
 		Scanner s=new Scanner(System.in);
 		int num=s.nextInt();
+		s.close();
 		int count=0;
 		while(num!=0)
 		{
