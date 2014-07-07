@@ -73,7 +73,7 @@ public class TheSameString {
 			}
 			if(max==0)
 			{
-				System.out.println("没有找到公共子串");
+				System.out.println(0);
 			}
 			else
 			{
